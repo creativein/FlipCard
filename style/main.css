@@ -1,0 +1,254 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+
+body {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4em;
+  color: #333;
+  background: #eee;
+  background-position: center center;
+}
+
+h1 {
+  margin: 0.5em 0 1em 0;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #096AA3;
+}
+
+h2{
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.animation {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.pageTitle sup
+{
+  font-size: .6em;
+  color: #333;
+}
+.well {
+  padding: 3%;
+  margin: 20px auto;
+  border:none;
+  text-align: center;
+}
+.well p
+{
+  font-weight: 300;
+}
+.content p
+{   
+  font-weight: 300;
+}
+.cardContainer 
+{
+ 
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+
+  
+  /*depth of the elements */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+
+  /*border: 1px solid #ff0000;*/
+  padding-left: 1%;
+}
+.secondRow
+{
+  margin-top: -1.4%
+}
+
+.card 
+{
+  width: 99%;
+  height: 200px;
+  cursor: pointer;
+  
+  /*transition effects */
+  -webkit-transition: -webkit-transform 0.6s;
+  -moz-transition: -moz-transform 0.6s;
+  -o-transition: -o-transform 0.6s;
+  transition: transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.card.flipped 
+{
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+.card.flipped:
+{ 
+}
+
+.card .front,
+.card .back {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 60px;
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.card .back {
+  width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+  font-size: 16px;
+  text-align: left;
+  line-height: 25px;
+}
+
+.card .back {
+  background: #03446A;
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+/*Colors for front and back applied here*/
+.cardContainer:first-child .card .front {
+  background: #2aa9e0;
+}
+
+.cardContainer:first-child .card .back {
+  background: #2aa9e0;
+}
+
+.cardContainer:nth-child(2) .card .front {
+  background: #f39c12;
+}
+.cardContainer:nth-child(2) .card .back {
+  background: #f39c12;
+}
+
+.cardContainer:nth-child(3) .card .front {
+  background: #27ae60;
+}
+.cardContainer:nth-child(3) .card .back {
+  background: #27ae60;
+}
+
+.cardContainer:nth-child(4) .card .front 
+{
+  background: #AD103C;
+}
+.cardContainer:nth-child(4) .card .back 
+{
+  background: #AD103C;
+}
+
+
+
+h3.cardTitle {
+  line-height: 1.2em;
+  margin-top: 8%;
+  font-weight: 600;
+}
+.content h3.cardTitle
+{
+  margin-top: 0%;
+}
+
+.content {
+  padding: 4%;
+  font-weight: 100;
+  text-align: left;
+  font-weight: bold;
+}
+
+@media all and (max-width: 1000px){
+  h3.cardTitle{
+      font-weight: 500;
+       
+  }
+  .content p
+  {
+    margin-top: -15%;
+    line-height: 1.2em;
+  }
+  
+  .card
+  {
+   height:175px;
+  }
+
+}
+@media all and (max-width : 752px) {
+ 
+  .secondRow
+  {
+    margin-top: -3%;
+  }
+  .cardContainer:nth-child(3),.cardContainer:nth-child(4)
+  {
+    margin-top: 3%;
+  }
+
+}
+@media all and (max-width : 390px) {
+ 
+  .card
+  {
+  width:100%;
+   height:150px;
+  }
+  .secondRow
+  {
+    margin-top: -9%;
+  }
+  .well 
+  {
+  padding: 1%;
+  }
+   .cardContainer:nth-child(3),.cardContainer:nth-child(4)
+  {
+    margin-top: 5%;
+  }
+  h3.cardTitle
+  {
+   font-weight: 500;     
+  }
+  .content p
+  {
+    margin-top: -20%;
+    line-height: 1.2em;
+  }
+  .cardWrapper
+  {
+    margin-left: 4%;
+  }
+
+}
