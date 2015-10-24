@@ -1,4 +1,4 @@
-var app = angular.module('shine.directive', []);
+var app = angular.module('shine.directive', ['shine.filter']);
 
 /*FLIP CARD DIRECTIVE*/
 app.directive('shineFlipcard',function () {
@@ -6,7 +6,7 @@ app.directive('shineFlipcard',function () {
         restrict: "E",
         replace: true,
         // require: '^ngModel',
-        template: '<div class="card"><div class="front" ng-bind="frontHTML"></div><div class="back" ng-bind="backHTML"></div></div>',
+        template: '<div class="card"><div class="front" ng-bind-html="frontHTML | unsafe"></div><div class="back" ng-bind-html="backHTML | unsafe"></div></div>',
         scope: {
             shineX: '@',
             shineY: '@'
