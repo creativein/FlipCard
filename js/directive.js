@@ -13,7 +13,9 @@ app.directive('shineFlipcard',function () {
         },
         link: function (scope, element, attr) {
         	angular.element(element[0]).on('click',function(){
+
         		angular.element(this).toggleClass('flipped');
+
         	})
 
         },

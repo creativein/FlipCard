@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="style/main.css">
 </head>
 <body>
- <div class="container">
+ <div class="container" ng-controller="flip">
   <div class="well">
     <h1 class="pageTitle">3D Flip Card Effect</h1>
     <p>Advanced CSS3</p>
@@ -27,27 +27,21 @@
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 cardContainer">
-        <shine-flipcard shine-x="Flip me!" shine-y="here is the last message"></shine-flipcard>
+        <shine-flipcard shine-x='<h3 class="cardTitle">Flip me!</h3>' shine-y="here is the last message"></shine-flipcard>
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 cardContainer">
-        <shine-flipcard shine-x="Flip me!" shine-y="here is the last message"></shine-flipcard>
+        <shine-flipcard shine-x='<h3 class="cardTitle">Flip me!</h3>' shine-y="here is the last message"></shine-flipcard>
       </div>
 
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 cardContainer">
-        <div class="card">
-          <div class="front"><h3 class="cardTitle">Flip me!</h3></div>
-          <div class="back">
-            <div class="content">
-              <h3 class="cardTitle">Welldone!</h3>
-              <br/>
-              <p id="sad"></p>
-            </div>
-          </div>
-        </div>
+        <shine-flipcard shine-x='<h3 class="cardTitle">Flip me!</h3>' shine-y="here is the last message"></shine-flipcard>
       </div>
     </div>
     <!-- first Row End -->
+    <div class="well">
+      <button type="button" class="btn btn-success" ng-click="flip()">Flip</button>
+    </div>
   </div><!--cardWrapper Ends-->
 
 </div>
