@@ -1,38 +1,28 @@
 var app = angular.module('shine', ['shine.directive']);
 
 
-app.controller('flip', ['$scope', function ($scope) {
+app.controller('flip', ['$scope','$timeout', function ($scope,$timeout) {
 
 
     var firstCard = document.getElementsByClassName("card")[0],
         secondCard = document.getElementsByClassName("card")[1],
         thirdCard = document.getElementsByClassName("card")[2],
         fourthCard = document.getElementsByClassName("card")[3];
+        //delayType = 'timeout';  // css || timeout
 
-    function myMethod () {
-
-    }
-
-    function blah () {
-        //$('.card').addClass('animClass');
-        //waits(myMethod, 2000);
-
-        var waits = (constant.mode === 'timeout') ? $timeout : cssAnim;
-        waits(function () {}, 2000)
-
+    function customDelay (callbackFunction, timeDelay, domElt,delayType) {
         var tEvent = transitionEvent();
-        tEvent && firstCard.addEventListener(tEvent, function () {
-            myMethod();
-        });
-
-        $('.card').addClass('animClass');
+        if(delayType === 'css'){
+            tEvent && domElt.addEventListener(tEvent, callbackFunction);
+        }else if(delayType === 'timeout'){
+            $timeout(callbackFunction,timeDelay);
+        }
     }
-
 
     var transitionEvent = function () {
-        var t;
-        var el = document.createElement('fakeelement');
-        var transitions = {
+        var t,
+            el = document.createElement('fakeelement'),
+            transitions = {
             'transition': 'transitionend',
             'OTransition': 'oTransitionEnd',
             'MozTransition': 'transitionend',
@@ -47,17 +37,14 @@ app.controller('flip', ['$scope', function ($scope) {
     };
 
     $scope.flip = function () {
-
-        var tEvent = transitionEvent();
-        tEvent && firstCard.addEventListener(tEvent, function () {
+        var cc_css = function(){
             angular.element(secondCard).toggleClass('flipped');
-        });
-        tEvent && secondCard.addEventListener(tEvent, function () {
+        };
+        var cc_time = function(){
             angular.element(thirdCard).toggleClass('flipped');
-        });
-        tEvent && thirdCard.addEventListener(tEvent, function () {
-            angular.element(fourthCard).toggleClass('flipped');
-        });
+        };
+        customDelay(cc_css,1000,firstCard,'css');
+        customDelay(cc_time,2000,firstCard,'timeout');
         angular.element(firstCard).toggleClass('flipped');
     }
 
