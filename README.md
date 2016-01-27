@@ -1,7 +1,7 @@
 ## FlipCard
 CSS3 **Flipcard** , Angular Directive
 
-The custom directive has two configurable parameter:
+The custom directive has two configurable attributes:
 shineX --  Front Flip Card HTML goes here...
 shineY --  Back Flip Card HTML goes here...
 
